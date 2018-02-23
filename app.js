@@ -7,6 +7,7 @@ const flash=require('connect-flash');
 const passport=require('passport');
 const { check, validationResult } = require('express-validator/check');
 const config=require('./config/database');
+const port= process.env.PORT || 3000;
 
 //Connection to MongoDB
 mongoose.connect(config.database);
@@ -97,7 +98,7 @@ app.use('/user',users);
 
 
 //Server Startup
-app.listen(3000,function(){
+app.listen(port,function(){
 
-    console.log('Server Started in Port Number 3000');
+    console.log(`Server Started in Port Number ${port}`);
 });
