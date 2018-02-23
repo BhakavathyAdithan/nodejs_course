@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    h1 Edit Book Info
+    br
+    hr
+    form(method='POST', action='/book/edit/'+book._id)
+        #form-group
+            label Title:
+            input.form-control(name='title', type='text' ,value=book.title)
+        #form-group
+            label Author:
+            input.form-control(name='author', type='text' value=book.author)
+        #form-group
+            label Genre:
+            textarea.form-control(name='genre')= book.Genre
+        br
+        hr
+        input.btn.btn-primary(type='submit' , value='Submit')
+
+
